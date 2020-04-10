@@ -490,6 +490,11 @@ h2 {
       #wrapper {
           width:100%;
       }
+
+      #map {
+        height:500px;
+        pointer-events: none !important;
+      }
   
     .ind {
         width:17%;

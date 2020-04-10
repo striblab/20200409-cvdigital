@@ -94,7 +94,13 @@ import stp from '../sources/stpaul.json';
 mapboxgl.accessToken = 'pk.eyJ1Ijoic3RhcnRyaWJ1bmUiLCJhIjoiY2sxYjRnNjdqMGtjOTNjcGY1cHJmZDBoMiJ9.St9lE8qlWR5jIjkPYd3Wqw';
 
 var dzoom = 5.6;
+
+  if ($("#map").width() < 600) {
+    dzoom = 5;
+  }
+
 var mzoom = 10;
+var mobile_zoom = 9.5;
 var center = [-93.177798, 44.953564]
 var center2 = [-94.021765, 46.619261];
 
@@ -110,7 +116,8 @@ var map = new mapboxgl.Map({
 // map.addControl(new mapboxgl.NavigationControl());
 map.scrollZoom.disable();
 map.doubleClickZoom.disable();
-
+map.touchZoomRotate.disableRotation();
+map.dragRotate.disable();
 
 /********** SPECIAL RESET BUTTON **********/
 class HomeReset {
@@ -188,14 +195,14 @@ if (utils.isMobile()) {
   $('.my-custom-control').on('click', function(){
     map.jumpTo({
       center: center2,
-      zoom: 5,
+      zoom: dzoom,
     });
   });
 
   $('.my-custom-control2').on('click', function(){
     map.jumpTo({
       center: center,
-      zoom: 10,
+      zoom: mzoom,
     });
   });
 }
@@ -269,32 +276,27 @@ map.on('load', function() {
 
 });
 
-// $(document).ready(function() {
-//     if ($("#wrapper").width() < 600) {
-//         map.flyTo({
-//             center: center,
-//             zoom: mzoom,
-//         });
-//     } else {
-//         map.flyTo({
-//             center: center,
-//             zoom: dzoom,
-//         });
-//     }
-//     $(window).resize(function() {
-//         if ($("#wrapper").width() < 600) {
-//             map.flyTo({
-//                 center: center,
-//                 zoom: mzoom,
-//             });
-//         } else {
-//             map.flyTo({
-//                 center: center,
-//                 zoom: dzoom,
-//             });
-//         }
-//     });
-// });
+$(document).ready(function() {
+    if ($("#map").width() < 600) {
+        map.flyTo({
+            center: center,
+            zoom: mobile_zoom,
+        });
+    }
+    $(window).resize(function() {
+        if ($("#map").width() < 600) {
+            map.flyTo({
+                center: center,
+                zoom: mobile_zoom,
+            });
+        } else {
+            map.flyTo({
+                center: center,
+                zoom: mzoom,
+            });
+        }
+    });
+});
 
 
 
