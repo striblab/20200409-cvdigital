@@ -32,11 +32,11 @@ $selector-wrapper: '.strib-styles.ssa.ssb.ssc';
 
 @font-face {
   font-family: 'StateFaceRegular';
-  src: url('http://static.startribune.com/news/projects/all/20200303-primary-precinct-map/webfont/stateface-regular-webfont.eot');
-  src: url('http://static.startribune.com/news/projects/all/20200303-primary-precinct-map/webfont/stateface-regular-webfont.eot?#iefix') format('embedded-opentype'),
-       url('http://static.startribune.com/news/projects/all/20200303-primary-precinct-map/webfont/stateface-regular-webfont.woff') format('woff'),
-       url('http://static.startribune.com/news/projects/all/20200303-primary-precinct-map/webfont/stateface-regular-webfont.ttf') format('truetype'),
-       url('http://static.startribune.com/news/projects/all/20200303-primary-precinct-map/webfont/stateface-regular-webfont.svg#StateFaceRegular') format('svg');
+  src: url('https://static.startribune.com/news/projects/all/20200303-primary-precinct-map/webfont/stateface-regular-webfont.eot');
+  src: url('https://static.startribune.com/news/projects/all/20200303-primary-precinct-map/webfont/stateface-regular-webfont.eot?#iefix') format('embedded-opentype'),
+       url('https://static.startribune.com/news/projects/all/20200303-primary-precinct-map/webfont/stateface-regular-webfont.woff') format('woff'),
+       url('https://static.startribune.com/news/projects/all/20200303-primary-precinct-map/webfont/stateface-regular-webfont.ttf') format('truetype'),
+       url('https://static.startribune.com/news/projects/all/20200303-primary-precinct-map/webfont/stateface-regular-webfont.svg#StateFaceRegular') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -59,6 +59,10 @@ $selector-wrapper: '.strib-styles.ssa.ssb.ssc';
 
 .legend {
   font-size:0.6em;
+}
+
+.legend2 {
+  font-size:0.6em;
   margin-bottom:15px;
 }
 
@@ -75,8 +79,18 @@ $selector-wrapper: '.strib-styles.ssa.ssb.ssc';
   display:inline-block;
 }
 
+.legend2 div {
+  height:10px;
+  width:40px;
+  display:inline-block;
+}
+
 .null {
   background-color:#f7f7f7;
+}
+
+#map:hover {
+  cursor:grab !important;
 }
 
 .center {
@@ -89,6 +103,7 @@ $selector-wrapper: '.strib-styles.ssa.ssb.ssc';
 
 .far {
   color:#333333 !important;
+  font-size:1.5em !important;
 }
 
 .monitor_button, .my-custom-control {
