@@ -223,7 +223,7 @@ map.on('load', function() {
             'type': 'fill',
                  'paint': {
                 'fill-antialias' : true,
-                'fill-opacity': 0.7,
+                'fill-opacity': 0.85,
                 'fill-outline-color': "#888888",
                 'fill-color': {
                  "property": "tracts_no_internet_pct",
